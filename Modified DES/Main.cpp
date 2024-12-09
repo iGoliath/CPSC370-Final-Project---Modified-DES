@@ -283,10 +283,21 @@ void GenerateKeys(std::string Hex, int* k1, int* k2) {
 	int K2[48];
 	HextoBinary(Hex, K0);
 	PC1(K0, C0D0);
+	std::cout << "\nResult of Permuted Choice 1: ";
+	BinarytoHexPrint(C0D0, 56);
 	LeftShiftBits(C0D0);
+	std::cout << "\nResult of Left Shift #1: ";
+	BinarytoHexPrint(C0D0, 56);
 	PC2(C0D0, k1);
+	std::cout << "\nResult of Permuted Choice 2 #1 (Key 1): ";
+	BinarytoHexPrint(k1, 56);
 	LeftShiftBits(C0D0);
+	std::cout << "\nResult of Left Shift #2: ";
+	BinarytoHexPrint(C0D0, 56);
 	PC2(C0D0, k2);
+	std::cout << "\nResult of Permuted Choice 2 #2 (Key 2): ";
+	BinarytoHexPrint(k2, 56);
+	std::cout << "\n\n";
 	
 }
 
